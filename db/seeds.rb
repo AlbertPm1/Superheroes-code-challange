@@ -1,45 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+hero1 = Hero.create(name: "Kamala Khan", super_name: "Ms. Marvel")
+hero2 = Hero.create(name: "Doreen Green", super_name: "Squirrel Girl")
+hero3 = Hero.create(name: "Gwen Stacy", super_name: "Spider-Gwen")
 
-# 5.times do |i|
-#     Product.create(name: "Product #{i+1}", price: rand(1..100))
-#   end
+power1 = Power.create(name: "Super Strength", description: "Gives the wielder super-human strengths")
+power2 = Power.create(name: "Flight", description: "Gives the wielder the ability to fly through the skies at supersonic speed")
+power3 = Power.create(name: "Teleportation", description: "Allows the wielder to instantly transport themselves to another location")
 
-# 5.times do |i|
-
-    puts "🦸 Seeding Heroes"
-    Hero.create!(name: Faker::Name.name, super_name: Faker::Superhero.name)
-    Hero.create!(name: Faker::Name.name, super_name: Faker::Superhero.name)
-    Hero.create!(name: Faker::Name.name, super_name: Faker::Superhero.name)
-    Hero.create!(name: Faker::Name.name, super_name: Faker::Superhero.name)
-    Hero.create!(name: Faker::Name.name, super_name: Faker::Superhero.name)
-    
-    # Faker::Superhero.prefix
-    puts "💪 Seeding powers"
-    Power.create!(name: Faker::Superhero.prefix, description: Faker::Superhero.descriptor)
-    Power.create!(name: Faker::Superhero.prefix, description: Faker::Superhero.descriptor)
-    Power.create!(name: Faker::Superhero.prefix, description: Faker::Superhero.descriptor)
-    Power.create!(name: Faker::Superhero.prefix, description: Faker::Superhero.descriptor)
-    Power.create!(name: Faker::Superhero.prefix, description: Faker::Superhero.descriptor)
-    
-    # 'Strong','Weak','Average'
-    puts "🌱 Seeding Hero Powers"
-    HeroPower.create!( hero_id: 1, power_id: 1, strength: "Strong")
-    HeroPower.create!( hero_id: 2, power_id: 2, strength: "Weak")
-    HeroPower.create!( hero_id: 3, power_id: 3, strength: "Average")
-    HeroPower.create!( hero_id: 4, power_id: 4, strength: "Strong")
-    HeroPower.create!( hero_id: 5, power_id: 5, strength: "Weak")
-    HeroPower.create!( hero_id: 6, power_id: 1, strength: "Strong")
-    HeroPower.create!( hero_id: 7, power_id: 2, strength: "Weak")
-    HeroPower.create!( hero_id: 8, power_id: 3, strength: "Average")
-    HeroPower.create!( hero_id: 9, power_id: 4, strength: "Strong")
-    HeroPower.create!( hero_id: 10, power_id: 1, strength: "Strong")
-
-    
-
-# end
+hero_power1 = HeroPower.create(hero: hero1, power: power1, strength: "Strong")
+hero_power2 = HeroPower.create(hero: hero1, power: power2, strength: "Average")
+hero_power3 = HeroPower.create(hero: hero2, power: power3, strength: "Weak")
